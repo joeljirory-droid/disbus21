@@ -2805,7 +2805,10 @@ function guardarLS(){localStorage.setItem('disbus_v2',JSON.stringify(dias));}
 
 function updateHeader(){
   const hoy=new Date();
-  const t=dias.filter(d=>{const f=new Date(d.fecha);return f.getMonth()===hoy.getMonth()&&f.getFullYear()===hoy.getFullYear()&&d.tipo!=='descanso';}).reduce((s,d)=>s+(d.total||0),0);
+  const anio=hoy.getFullYear(), mes=hoy.getMonth();
+  const inicioPer=new Date(anio,mes-1,16);
+  const finPer=new Date(anio,mes,15);
+  const t=dias.filter(d=>{const f=new Date(d.fecha+'T00:00:00');return f>=inicioPer&&f<=finPer&&d.tipo!=='descanso';}).reduce((s,d)=>s+(d.total||0),0);
   const antig = config.antiguedad ?? 0;
   document.getElementById('headerTotal').textContent=`+${(TOTAL_FIJO+antig+t).toFixed(2)} €`;
 }
