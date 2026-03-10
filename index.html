@@ -297,6 +297,8 @@ body {
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
 }
 .cal-day.festivo-d { background: rgba(239,68,68,0.05); }
+.cal-day.vacances-day { background: rgba(139,92,246,0.12); border: 1px solid rgba(139,92,246,0.3); }
+.cal-day.vacances-day .day-num { color: var(--purple); font-weight: 700; }
 .cal-day.festivo-nac { background: rgba(239,68,68,0.07); }
 .cal-day.festivo-nac::after {
   content: '';
@@ -461,6 +463,51 @@ input:focus, select:focus {
 
 /* ── RESUMEN ── */
 .res-wrap { padding: 16px; }
+.jornada-progress-wrap {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+.jornada-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.jornada-progress-title {
+  font-size: 12px;
+  color: var(--muted2);
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.jornada-progress-nums {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--mono);
+  color: var(--accent);
+}
+.jornada-bar-bg {
+  background: var(--surface3);
+  border-radius: 99px;
+  height: 10px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.jornada-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+.jornada-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  color: var(--muted);
+}
 .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
 .stat-card {
   background: var(--surface);
@@ -685,6 +732,57 @@ input:focus, select:focus {
 .emp-ruta-btn:active { background: rgba(59,130,246,0.2); }
 .emp-has-rutas { border-color: rgba(59,130,246,0.3); }
 
+/* ── INFORME PERÍODO ── */
+.inf-header { background: linear-gradient(135deg,rgba(245,158,11,0.15),rgba(16,185,129,0.08)); border:1.5px solid rgba(245,158,11,0.3); border-radius:14px; padding:16px; text-align:center; margin-bottom:14px; }
+.inf-header-title { font-size:11px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:4px; }
+.inf-header-period { font-size:15px; font-weight:800; color:var(--accent); margin-bottom:2px; }
+.inf-header-sub { font-size:10px; color:var(--muted); }
+.inf-grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:7px; margin-bottom:12px; }
+.inf-kpi { background:var(--surface2); border:1px solid var(--border); border-radius:11px; padding:10px 8px; text-align:center; }
+.inf-kpi-lbl { font-size:9px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.05em; color:var(--muted); margin-bottom:3px; }
+.inf-kpi-val { font-size:16px; font-weight:800; font-family:var(--mono); line-height:1; }
+.inf-section-title { font-size:10px; font-family:var(--mono); text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin:14px 0 8px; display:flex; align-items:center; gap:6px; }
+.inf-section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+.inf-day { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:10px 12px; margin-bottom:6px; }
+.inf-day-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.inf-day-fecha { font-size:12px; font-weight:700; color:var(--text); }
+.inf-day-total { font-size:13px; font-weight:800; font-family:var(--mono); color:var(--accent); }
+.inf-day-meta { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:5px; }
+.inf-day-tag { font-size:10px; font-family:var(--mono); background:var(--surface3); border:1px solid var(--border); border-radius:5px; padding:2px 7px; color:var(--muted2); }
+.inf-day-pluses { display:flex; flex-wrap:wrap; gap:4px; }
+.inf-plus-chip { font-size:10px; font-family:var(--mono); border-radius:5px; padding:2px 7px; border:1px solid; }
+.inf-neto-card { background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(16,185,129,0.06)); border:2px solid rgba(59,130,246,0.3); border-radius:14px; padding:16px; text-align:center; margin:12px 0; }
+.inf-plus-row { display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--border); }
+.inf-plus-row:last-child { border-bottom:none; }
+.inf-capture-hint { text-align:center; padding:14px; color:var(--muted); font-size:11px; border-top:1px dashed var(--border); margin-top:12px; }
+/* ── RESUMEN+ ── */
+.rp-section { margin-bottom: 18px; }
+.rp-title {
+  font-size: 11px; font-family: var(--mono); text-transform: uppercase;
+  letter-spacing: 0.08em; color: var(--muted); margin-bottom: 10px;
+  display: flex; align-items: center; gap: 6px;
+}
+.rp-title::after { content:''; flex:1; height:1px; background:var(--border); }
+.rp-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; }
+.rp-stat { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; }
+.rp-stat-lbl { font-size: 10px; color: var(--muted); font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+.rp-stat-val { font-size: 20px; font-weight: 800; font-family: var(--mono); line-height: 1; }
+.rp-bar-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+.rp-bar-label { font-size: 11px; color: var(--text2); width: 110px; flex-shrink: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rp-bar-bg { flex: 1; background: var(--surface3); border-radius: 99px; height: 7px; overflow: hidden; }
+.rp-bar-fill { height: 100%; border-radius: 99px; transition: width 0.5s ease; }
+.rp-bar-val { font-size: 11px; font-family: var(--mono); color: var(--muted2); width: 52px; text-align: right; flex-shrink: 0; }
+.rp-mes-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; }
+.rp-mes-lbl { font-size: 10px; font-family: var(--mono); color: var(--muted); width: 28px; flex-shrink: 0; }
+.rp-mes-bars { flex: 1; display: flex; gap: 2px; align-items: flex-end; height: 36px; }
+.rp-mes-bar { flex: 1; border-radius: 3px 3px 0 0; transition: height 0.4s ease; min-height: 2px; }
+.rp-chart-wrap { background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 12px; }
+.rp-chart-labels { display: flex; justify-content: space-between; margin-top: 6px; }
+.rp-chart-lbl { font-size: 9px; font-family: var(--mono); color: var(--muted); text-align: center; flex: 1; }
+.rp-emp-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 9px; margin-bottom: 6px; }
+.rp-emp-name { font-size: 12px; color: var(--text2); font-weight: 600; }
+.rp-emp-days { font-size: 13px; font-family: var(--mono); font-weight: 700; color: var(--accent); }
+.rp-total-card { background: linear-gradient(135deg,rgba(59,130,246,0.1),rgba(139,92,246,0.08)); border: 1.5px solid rgba(59,130,246,0.3); border-radius: 14px; padding: 16px; text-align: center; margin-bottom: 14px; }
 </style>
 </head>
 <body>
@@ -916,6 +1014,7 @@ function checkPwd() {
               <option value="circuito_int">Circuito internacional</option>
               <option value="intermedio">Día intermedio</option>
               <option value="descanso">Día libre</option>
+              <option value="vacances">🏖️ Vacaciones</option>
             </select>
           </div>
         </div>
@@ -963,10 +1062,48 @@ function checkPwd() {
           <label>Notas</label>
           <input type="text" id="notas" placeholder="Destino, observaciones...">
         </div>
+
+        <!-- BUS + KM -->
+        <div style="border-top:1px solid var(--border);margin:14px 0 12px;"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>🚌 Nº Bus</label>
+            <input type="number" id="numBus" placeholder="Ej: 42" oninput="calcKm()" min="1">
+          </div>
+          <div class="form-group" style="flex:2;">
+            <label>Km totals</label>
+            <div id="kmTotalDisplay" style="background:var(--surface2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px 14px;font-family:var(--mono);font-size:15px;font-weight:700;color:var(--muted);text-align:center;">— km</div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Km inicials</label>
+            <input type="number" id="kmInici" placeholder="0" oninput="calcKm()" min="0">
+          </div>
+          <div class="form-group">
+            <label>Km finals</label>
+            <input type="number" id="kmFinal" placeholder="0" oninput="calcKm()" min="0">
+          </div>
+        </div>
       </div>
 
       <div class="preview-box" id="previewBox" style="display:none;"></div>
       <button class="btn" onclick="guardar()">💾 Guardar día</button>
+
+      <!-- CONTADOR VACACIONES -->
+      <div id="vacancesCounterCard" class="card" style="display:none;border:1px solid rgba(139,92,246,0.4);background:rgba(139,92,246,0.06);margin-top:12px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+          <div class="card-title" style="color:var(--purple);">🏖️ Vacaciones anuales</div>
+          <div id="vacancesNums" style="font-size:15px;font-weight:700;font-family:var(--mono);color:var(--purple);"></div>
+        </div>
+        <div class="jornada-bar-bg">
+          <div id="vacancesBarFill" class="jornada-bar-fill" style="background:var(--purple);"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--muted);">
+          <span id="vacancesStatus"></span>
+          <span>22 días laborables</span>
+        </div>
+      </div>
 
       <!-- ── TACÓGRAFO ── -->
       <div class="card" style="margin-top:12px;">
@@ -1089,6 +1226,21 @@ function checkPwd() {
                 <span style="color:var(--muted);font-size:13px;">€</span>
               </div>
             </div>
+            <!-- ANTIGÜEDAD -->
+            <div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:4px;">
+              <div style="font-size:12px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:10px;">🏅 Antigüedad (2025)</div>
+              <select id="antiguedad" onchange="guardarConfig()" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:var(--sans);font-size:13px;padding:8px 10px;outline:none;">
+                <option value="0">Sin antigüedad — 0,00€</option>
+                <option value="32.61">1 Bienio — 32,61€</option>
+                <option value="65.22">2 Bienios — 65,22€</option>
+                <option value="130.46">2 Bienios + 1 Quinquenio — 130,46€</option>
+                <option value="195.67">2 Bienios + 2 Quinquenios — 195,67€</option>
+                <option value="260.89">2 Bienios + 3 Quinquenios — 260,89€</option>
+                <option value="326.11">2 Bienios + 4 Quinquenios — 326,11€</option>
+                <option value="391.33">2 Bienios + 5 Quinquenios — 391,33€</option>
+              </select>
+              <div style="font-size:10px;color:var(--muted);margin-top:7px;">Se suma a los conceptos fijos cada mes</div>
+            </div>
           </div>
         </div>
       </div>
@@ -1141,11 +1293,62 @@ function checkPwd() {
   </div>
 </div>
 
+<!-- MODAL INFORME PERÍODO -->
+<div class="modal-overlay" id="informeOverlay" onclick="cerrarInforme(event)">
+  <div class="modal" style="max-height:92vh;" id="informeModal">
+    <div class="modal-header">
+      <div class="modal-title">🧾 Informe del período</div>
+      <button class="modal-close" onclick="cerrarInforme()">✕</button>
+    </div>
+    <div id="informeContent"></div>
+  </div>
+</div>
+
+<!-- MODAL RESUMEN+ -->
+<div class="modal-overlay" id="resumenPlusOverlay" onclick="cerrarResumenPlus(event)">
+  <div class="modal" style="max-height:90vh;">
+    <div class="modal-header">
+      <div class="modal-title">📊 Resumen+ anual</div>
+      <button class="modal-close" onclick="cerrarResumenPlus()">✕</button>
+    </div>
+    <div id="resumenPlusContent"></div>
+  </div>
+</div>
+
 <script>
 const SUELDO_BASE = 1636.09;
 const PAGA_BENEFICIOS = 139.06;
 const BOLSA_VACACIONES = 28.51;
 const TOTAL_FIJO = SUELDO_BASE + PAGA_BENEFICIOS + BOLSA_VACACIONES;
+
+// Calendari laboral Disbus 21 — períodos 16→15
+// Cada entrada: [any_inici, mes_inici(1-12), dia_inici, any_fi, mes_fi(1-12), dia_fi, dies_jornada]
+const CALENDARI_LABORAL = [
+  [2025,12,16, 2026, 1,15, 18],
+  [2026, 1,16, 2026, 2,15, 20],
+  [2026, 2,16, 2026, 3,15, 19],
+  [2026, 3,16, 2026, 4,15, 22],
+  [2026, 4,16, 2026, 5,15, 21],
+  [2026, 5,16, 2026, 6,15, 21],
+  [2026, 6,16, 2026, 7,15, 21],
+  [2026, 7,16, 2026, 8,15, 20],
+  [2026, 8,16, 2026, 9,15, 20],
+  [2026, 9,16, 2026,10,15, 21],
+  [2026,10,16, 2026,11,15, 21],
+  [2026,11,16, 2026,12,15, 19],
+];
+
+function getDiesJornada(inicioPer, finPer) {
+  for (const [ay,am,ad, fy,fm,fd, dies] of CALENDARI_LABORAL) {
+    const ini = new Date(ay, am-1, ad);
+    const fin = new Date(fy, fm-1, fd);
+    // Comparar por tiempo para evitar offset
+    if (ini.getTime() === inicioPer.getTime() && fin.getTime() === finPer.getTime()) {
+      return dies;
+    }
+  }
+  return null; // período fuera del calendari
+}
 const PLUSES_H = [
   { min:14,   val:60,   label:'Día completo >14h' },
   { min:12.5, val:45.5, label:'Más de 12,5h' },
@@ -1176,7 +1379,7 @@ const FESTIVOS_NAC = new Set([
 
 let dias = JSON.parse(localStorage.getItem('disbus_v2') || '[]');
 let _editando = false;
-let config = JSON.parse(localStorage.getItem('disbus_cfg') || '{"seq":0,"mostrarLibres":true,"pctComunes":4.83,"pctAccidente":1.65,"pctIRPF":16.76,"poliza":0.69}');
+let config = JSON.parse(localStorage.getItem('disbus_cfg') || '{"seq":0,"mostrarLibres":true,"pctComunes":4.83,"pctAccidente":1.65,"pctIRPF":16.76,"poliza":0.69,"antiguedad":0}');
 let calMes = new Date().getMonth();
 let calYear = new Date().getFullYear();
 let calPeriodo = 'mes';
@@ -1202,6 +1405,7 @@ function guardarConfig() {
   config.pctAccidente = parseFloat(document.getElementById('pctAccidente').value) || 1.65;
   config.pctIRPF      = parseFloat(document.getElementById('pctIRPF').value)      || 16.76;
   config.poliza       = parseFloat(document.getElementById('poliza').value)        || 0.69;
+  config.antiguedad   = parseFloat(document.getElementById('antiguedad').value)    || 0;
   localStorage.setItem('disbus_cfg', JSON.stringify(config));
   renderCal();
   renderProximosLibres();
@@ -1281,6 +1485,7 @@ window.onload = () => {
   renderCal();
   renderResumen();
   updateHeader();
+  renderVacancesCounter();
 };
 
 function cargarPcts() {
@@ -1288,6 +1493,7 @@ function cargarPcts() {
   document.getElementById('pctAccidente').value = config.pctAccidente ?? 1.65;
   document.getElementById('pctIRPF').value      = config.pctIRPF      ?? 16.76;
   document.getElementById('poliza').value       = config.poliza        ?? 0.69;
+  document.getElementById('antiguedad').value   = config.antiguedad    ?? 0;
 }
 
 function showPanel(id) {
@@ -1360,8 +1566,11 @@ function renderCal() {
 
     let cls = 'cal-day';
     if (esHoy) cls += ' today';
-    if (dato) cls += dato.tipo==='descanso' ? ' libre' : ' has-data';
-    else if (esLibreAuto) cls += ' libre';
+    if (dato) {
+      if (dato.tipo === 'descanso') cls += ' libre';
+      else if (dato.tipo === 'vacances') cls += ' vacances-day';
+      else cls += ' has-data';
+    } else if (esLibreAuto) cls += ' libre';
     if (dato?.festivo) cls += ' festivo-d';
     const esFestivoNac = FESTIVOS_NAC.has(fecha);
     if (esFestivoNac && !dato) cls += ' festivo-nac';
@@ -1372,6 +1581,8 @@ function renderCal() {
     if (dato) {
       if (dato.tipo === 'descanso') {
         inner += `<div class="libre-lbl">Libre</div>`;
+      } else if (dato.tipo === 'vacances') {
+        inner += `<div class="libre-lbl" style="color:var(--purple);">🏖️</div>`;
       } else {
         inner += `<div class="day-total-mini">+${dato.total.toFixed(0)}€</div>`;
         if (dato.inicio) inner += `<div class="day-time-mini">${dato.inicio}→${dato.fin}</div>`;
@@ -1458,6 +1669,8 @@ function renderModalContent(fecha, confirmando) {
 
   if (dato.tipo === 'descanso') {
     html += `<div style="text-align:center;padding:30px;color:var(--green);font-size:18px;">🌿 Día libre</div>`;
+  } else if (dato.tipo === 'vacances') {
+    html += `<div style="text-align:center;padding:30px;color:var(--purple);font-size:18px;">🏖️ Vacaciones</div>`;
   } else {
     html += `<div class="preview-box">`;
     if (dato.inicio) html += pRow('Horario', `${dato.inicio} → ${dato.fin} (${dato.horasStr})`);
@@ -1467,6 +1680,18 @@ function renderModalContent(fecha, confirmando) {
     html += `<div class="preview-total-row"><span class="pl">Total extras</span><span class="pv">+${dato.total.toFixed(2)}€</span></div>`;
     html += `</div>`;
     if (dato.notas) html += `<div style="font-size:12px;color:var(--muted);padding:8px 0;">📝 ${dato.notas}</div>`;
+  }
+
+  // Bus i km (sempre que hi hagi dades)
+  if (dato.numBus || dato.kmTotal !== undefined) {
+    html += `<div style="background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-top:10px;display:flex;gap:12px;flex-wrap:wrap;">`;
+    if (dato.numBus) html += `<div style="flex:1;min-width:80px;text-align:center;"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;font-family:var(--mono);">🚌 Bus</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:var(--accent);">${dato.numBus}</div></div>`;
+    if (dato.kmTotal !== undefined) {
+      html += `<div style="flex:1;min-width:80px;text-align:center;"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;font-family:var(--mono);">Km inicials</div><div style="font-size:15px;font-weight:700;font-family:var(--mono);color:var(--text2);">${dato.kmInici.toLocaleString('ca-ES')}</div></div>`;
+      html += `<div style="flex:1;min-width:80px;text-align:center;"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;font-family:var(--mono);">Km finals</div><div style="font-size:15px;font-weight:700;font-family:var(--mono);color:var(--text2);">${dato.kmFinal.toLocaleString('ca-ES')}</div></div>`;
+      html += `<div style="flex:1;min-width:80px;text-align:center;"><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.05em;font-family:var(--mono);">Km totals</div><div style="font-size:18px;font-weight:700;font-family:var(--mono);color:var(--blue);">${dato.kmTotal.toLocaleString('ca-ES')}</div></div>`;
+    }
+    html += `</div>`;
   }
 
   if (confirmando) {
@@ -1491,6 +1716,7 @@ function confirmarEliminar(fecha) {
   renderCal();
   renderResumen();
   updateHeader();
+  renderVacancesCounter();
   showToast('Día eliminado ✓');
 }
 
@@ -1519,6 +1745,11 @@ function editarDia(fecha) {
     document.getElementById('chk-'+k).classList.toggle('on', checks[k]);
   });
   document.getElementById('notas').value = dato.notas || '';
+  // Bus i km
+  document.getElementById('numBus').value = dato.numBus || '';
+  document.getElementById('kmInici').value = dato.kmInici !== undefined ? dato.kmInici : '';
+  document.getElementById('kmFinal').value = dato.kmFinal !== undefined ? dato.kmFinal : '';
+  calcKm();
   onTipoChange();
   _editando = true; // flag: no limpiar al entrar
   showPanel('reg');
@@ -1641,14 +1872,60 @@ function calcTaco() {
 // REGISTRAR
 function onTipoChange() {
   const tipo = document.getElementById('tipo').value;
-  document.getElementById('horasSection').style.display = tipo==='descanso' ? 'none' : 'block';
+  const esVacances = tipo === 'vacances';
+  const esDescanso = tipo === 'descanso';
+  document.getElementById('horasSection').style.display = (esDescanso || esVacances) ? 'none' : 'block';
+  renderVacancesCounter();
   calcular();
+}
+
+function getVacancesUsades() {
+  return dias.filter(d => d.tipo === 'vacances').length;
+}
+
+function renderVacancesCounter() {
+  const card = document.getElementById('vacancesCounterCard');
+  const usades = getVacancesUsades();
+  const total = 22;
+  const restants = total - usades;
+  const pct = Math.min(100, Math.round((usades / total) * 100));
+  card.style.display = 'block';
+  document.getElementById('vacancesNums').textContent = `${usades} / ${total}`;
+  document.getElementById('vacancesBarFill').style.width = pct + '%';
+  document.getElementById('vacancesBarFill').style.background = restants <= 0 ? 'var(--red)' : 'var(--purple)';
+  if (restants <= 0) {
+    document.getElementById('vacancesStatus').innerHTML = '⚠️ Vacaciones agotadas';
+    document.getElementById('vacancesNums').style.color = 'var(--red)';
+  } else if (restants <= 5) {
+    document.getElementById('vacancesStatus').innerHTML = `⚠️ Quedan <strong>${restants}</strong> días`;
+    document.getElementById('vacancesNums').style.color = 'var(--accent)';
+  } else {
+    document.getElementById('vacancesStatus').innerHTML = `Quedan <strong>${restants}</strong> días`;
+    document.getElementById('vacancesNums').style.color = 'var(--purple)';
+  }
 }
 
 function toggleChk(id) {
   checks[id] = !checks[id];
   document.getElementById('chk-'+id).classList.toggle('on', checks[id]);
   calcular();
+}
+
+function calcKm() {
+  const ini = parseFloat(document.getElementById('kmInici').value);
+  const fin = parseFloat(document.getElementById('kmFinal').value);
+  const display = document.getElementById('kmTotalDisplay');
+  if (!isNaN(ini) && !isNaN(fin) && fin >= ini) {
+    const total = fin - ini;
+    display.textContent = total.toLocaleString('ca-ES') + ' km';
+    display.style.color = 'var(--accent)';
+  } else if (!isNaN(ini) && !isNaN(fin) && fin < ini) {
+    display.textContent = '⚠️ Error';
+    display.style.color = 'var(--red)';
+  } else {
+    display.textContent = '— km';
+    display.style.color = 'var(--muted)';
+  }
 }
 
 function calcular() {
@@ -1719,10 +1996,32 @@ function guardar() {
   const tipo  = document.getElementById('tipo').value;
   const notas = document.getElementById('notas').value;
   if (!fecha) { showToast('⚠️ Selecciona una fecha'); return; }
+
+  // Validar vacances: comprobar que no se superen los 22 dias
+  if (tipo === 'vacances') {
+    const yaHay = dias.filter(d => d.tipo === 'vacances' && d.fecha !== fecha).length;
+    if (yaHay >= 22) { showToast('⚠️ ¡Ya has agotado los 22 días de vacaciones!'); return; }
+  }
+
   // Si ya existe, lo reemplaza directamente (viene de editarDia)
   dias = dias.filter(d=>d.fecha!==fecha);
   let entrada = { fecha, tipo, notas };
-  if (tipo!=='descanso') {
+
+  // Bus i km
+  const numBus = document.getElementById('numBus').value;
+  const kmInici = document.getElementById('kmInici').value;
+  const kmFinal = document.getElementById('kmFinal').value;
+  if (numBus) entrada.numBus = parseInt(numBus);
+  if (kmInici !== '' && kmFinal !== '') {
+    const ki = parseFloat(kmInici), kf = parseFloat(kmFinal);
+    if (!isNaN(ki) && !isNaN(kf) && kf >= ki) {
+      entrada.kmInici = ki;
+      entrada.kmFinal = kf;
+      entrada.kmTotal = kf - ki;
+    }
+  }
+
+  if (tipo!=='descanso' && tipo!=='vacances') {
     const inicio = document.getElementById('inicio').value;
     const fin    = document.getElementById('fin').value;
     if (!inicio||!fin) { showToast('⚠️ Pon hora de inicio y fin'); return; }
@@ -1744,11 +2043,17 @@ function guardar() {
   document.getElementById('tipo').value='normal';
   document.getElementById('inicio').value='';
   document.getElementById('fin').value='';
+  document.getElementById('numBus').value='';
+  document.getElementById('kmInici').value='';
+  document.getElementById('kmFinal').value='';
+  document.getElementById('kmTotalDisplay').textContent='— km';
+  document.getElementById('kmTotalDisplay').style.color='var(--muted)';
   checks={festivo:false,nocturno:false,equipo:false,pernocta:false};
   ['festivo','nocturno','equipo','pernocta'].forEach(k=>document.getElementById('chk-'+k).classList.remove('on'));
   document.getElementById('horasDisplay').textContent='-- h -- min';
   document.getElementById('previewBox').style.display='none';
   document.getElementById('horasSection').style.display='block';
+  renderVacancesCounter();
   onTipoChange();
 
   const d=new Date(fecha); d.setDate(d.getDate()+1);
@@ -1801,7 +2106,43 @@ function renderResumen() {
 
   const hh = Math.floor(horas);
   const hm = Math.round((horas % 1) * 60);
-  const bruto = TOTAL_FIJO + extras;
+
+  // Jornada del calendari laboral
+  const diesJornada = getDiesJornada(inicioPer, finPer);
+  const diesTreballats = enPer.length;
+  let jornadaHtml = '';
+  if (diesJornada !== null) {
+    const pct = Math.min(100, Math.round((diesTreballats / diesJornada) * 100));
+    const falten = diesJornada - diesTreballats;
+    let barColor, statusMsg;
+    if (pct >= 100) {
+      barColor = 'var(--green)';
+      statusMsg = '✅ Jornada completada!';
+    } else if (pct >= 70) {
+      barColor = 'var(--accent)';
+      statusMsg = `Faltan <strong>${falten}</strong> días`;
+    } else {
+      barColor = 'var(--blue)';
+      statusMsg = `Faltan <strong>${falten}</strong> días`;
+    }
+    jornadaHtml = `
+      <div class="jornada-progress-wrap">
+        <div class="jornada-progress-header">
+          <div class="jornada-progress-title">📅 Jornada del período</div>
+          <div class="jornada-progress-nums">${diesTreballats} / ${diesJornada} días</div>
+        </div>
+        <div class="jornada-bar-bg">
+          <div class="jornada-bar-fill" style="width:${pct}%;background:${barColor};"></div>
+        </div>
+        <div class="jornada-progress-footer">
+          <span>${statusMsg}</span>
+          <span style="color:${barColor};font-weight:700;">${pct}%</span>
+        </div>
+      </div>`;
+  }
+
+  const antig = config.antiguedad ?? 0;
+  const bruto = TOTAL_FIJO + antig + extras;
   const pctC  = config.pctComunes   ?? 4.83;
   const pctA  = config.pctAccidente ?? 1.65;
   const pctI  = config.pctIRPF      ?? 16.76;
@@ -1811,6 +2152,25 @@ function renderResumen() {
   const dIRPF      = bruto * pctI / 100;
   const totalDed   = dComunes + dAccidente + dIRPF + pol;
   const neto       = bruto - totalDed;
+  const vacUsades = dias.filter(d => d.tipo === 'vacances').length;
+  const vacRestants = 22 - vacUsades;
+  const vacPct = Math.min(100, Math.round((vacUsades / 22) * 100));
+  const vacColor = vacRestants <= 0 ? 'var(--red)' : vacRestants <= 5 ? 'var(--accent)' : 'var(--purple)';
+  const vacStatus = vacRestants <= 0 ? '⚠️ Agotadas' : `Quedan <strong>${vacRestants}</strong> días`;
+  const vacancesHtml = `
+    <div style="background:rgba(139,92,246,0.06);border:1px solid rgba(139,92,246,0.3);border-radius:14px;padding:14px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+        <div style="font-size:12px;color:var(--muted2);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.05em;">🏖️ Vacaciones anuales</div>
+        <div style="font-size:13px;font-weight:700;font-family:var(--mono);color:${vacColor};">${vacUsades} / 22 días</div>
+      </div>
+      <div class="jornada-bar-bg">
+        <div class="jornada-bar-fill" style="width:${vacPct}%;background:${vacColor};"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:11px;color:var(--muted);">
+        <span>${vacStatus}</span>
+        <span>22 días laborables</span>
+      </div>
+    </div>`;
 
   document.getElementById('resumenContent').innerHTML = `
     <div style="background:var(--surface2);border:1px solid var(--border);border-radius:14px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;">
@@ -1831,13 +2191,16 @@ function renderResumen() {
         <div class="stat-val" style="color:var(--green);font-size:26px;">${bruto.toFixed(2)}€</div>
       </div>
     </div>
+    ${jornadaHtml}
+    ${vacancesHtml}
     <div class="res-section">
       <div class="res-section-title">📋 Conceptos fijos</div>
       ${rr('Salario base', SUELDO_BASE)}
       ${rr('Paga prop. beneficios', PAGA_BENEFICIOS)}
       ${rr('Bolsa de vacaciones', BOLSA_VACACIONES)}
+      ${antig > 0 ? rr('🏅 Antigüedad', antig) : ''}
       <div style="border-top:1px solid var(--border);margin:8px 0 6px;"></div>
-      ${rr('<strong>Total fijos</strong>', TOTAL_FIJO)}
+      ${rr('<strong>Total fijos</strong>', TOTAL_FIJO + antig)}
     </div>
     <div class="res-section">
       <div class="res-section-title">➕ Pluses del período ${labelPer}</div>
@@ -1859,7 +2222,7 @@ function renderResumen() {
         <span style="font-size:13px;font-weight:700;color:var(--text);">💵 Total bruto</span>
         <span style="font-size:18px;font-weight:700;font-family:var(--mono);color:var(--green);">+${bruto.toFixed(2)}€</span>
       </div>
-      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Fijos ${TOTAL_FIJO.toFixed(2)}€ + Pluses ${extras.toFixed(2)}€</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:4px;">Fijos ${(TOTAL_FIJO+antig).toFixed(2)}€ + Pluses ${extras.toFixed(2)}€</div>
     </div>
     <div class="res-section" style="border:1px solid rgba(239,68,68,0.3);border-radius:14px;padding:14px;">
       <div class="res-section-title" style="color:var(--red);">📉 Deducciones</div>
@@ -1875,16 +2238,576 @@ function renderResumen() {
       <div style="font-size:36px;font-weight:700;font-family:var(--mono);color:var(--blue);">${neto.toFixed(2)}€</div>
       <div style="font-size:10px;color:var(--muted);margin-top:6px;">Porcentajes configurables en ⚙️ Config</div>
     </div>
+    <button onclick="abrirResumenPlus()" style="width:100%;margin-top:16px;padding:15px;background:linear-gradient(135deg,rgba(139,92,246,0.15),rgba(59,130,246,0.15));border:1.5px solid rgba(139,92,246,0.45);border-radius:14px;color:var(--text);font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;letter-spacing:0.01em;">
+      <span style="font-size:18px;">📊</span> Ver Resumen+ anual
+    </button>
+    <button onclick="abrirInformePeriodo()" style="width:100%;margin-top:10px;padding:15px;background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(16,185,129,0.08));border:1.5px solid rgba(245,158,11,0.4);border-radius:14px;color:var(--text);font-family:var(--sans);font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;letter-spacing:0.01em;">
+      <span style="font-size:18px;">🧾</span> Informe del período
+    </button>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px;">
+      <button onclick="exportarDatos()" style="padding:13px 8px;background:rgba(16,185,129,0.08);border:1.5px solid rgba(16,185,129,0.35);border-radius:12px;color:var(--green);font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;">
+        📤 Exportar
+      </button>
+      <button onclick="document.getElementById('importInput').click()" style="padding:13px 8px;background:rgba(59,130,246,0.08);border:1.5px solid rgba(59,130,246,0.35);border-radius:12px;color:var(--blue);font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;">
+        📥 Importar
+      </button>
+    </div>
+    <input type="file" id="importInput" accept=".json" style="display:none;" onchange="importarDatos(event)">
+    <div style="font-size:10px;color:var(--muted);text-align:center;margin-top:8px;line-height:1.5;">Exporta antes de actualizar la app para no perder tus datos</div>
   `;
 }
 function rr(l,v){return `<div class="res-row"><span class="rl">${l}</span><span class="rv">+${v.toFixed(2)}€</span></div>`;}
+
+
+// ===== INFORME DEL PERÍODO =====
+function abrirInformePeriodo() {
+  const hoy       = new Date();
+  const anio      = hoy.getFullYear();
+  const mes       = hoy.getMonth();
+  const inicioPer = new Date(anio, mes - 1, 16);
+  const finPer    = new Date(anio, mes, 15);
+  const DIAS_S    = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+  const MESES_L   = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+  const MESES_C   = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  const plusNombres = { horas:'Plus horas', dieta:'Dieta', limpieza:'Limpieza/Planif.', nocturno:'Nocturno', festivo:'Festivo', circuito:'Circuito', dst:'DST', equipo:'En equipo' };
+  const plusColors  = { horas:'rgba(245,158,11,0.2)', dieta:'rgba(16,185,129,0.2)', limpieza:'rgba(59,130,246,0.2)', nocturno:'rgba(139,92,246,0.2)', festivo:'rgba(239,68,68,0.2)', circuito:'rgba(245,158,11,0.15)', dst:'rgba(16,185,129,0.15)', equipo:'rgba(59,130,246,0.15)' };
+  const plusBorders = { horas:'rgba(245,158,11,0.5)', dieta:'rgba(16,185,129,0.5)', limpieza:'rgba(59,130,246,0.5)', nocturno:'rgba(139,92,246,0.5)', festivo:'rgba(239,68,68,0.5)', circuito:'rgba(245,158,11,0.4)', dst:'rgba(16,185,129,0.4)', equipo:'rgba(59,130,246,0.4)' };
+  const plusTextC   = { horas:'var(--accent)', dieta:'var(--green)', limpieza:'var(--blue)', nocturno:'var(--purple)', festivo:'var(--red)', circuito:'var(--accent)', dst:'var(--green)', equipo:'var(--blue)' };
+
+  const labelPer = `16 ${MESES_C[mes-1>=0?mes-1:11]} – 15 ${MESES_C[mes]} ${anio}`;
+
+  // Días del período
+  const enPer = dias.filter(d => {
+    const f = new Date(d.fecha + 'T00:00:00');
+    return f >= inicioPer && f <= finPer && d.tipo !== 'descanso';
+  }).sort((a,b) => a.fecha.localeCompare(b.fecha));
+
+  // Totales
+  const extras  = enPer.reduce((s,d) => s+(d.total||0), 0);
+  const horas   = enPer.reduce((s,d) => s+(d.totalH||0), 0);
+  const kmTotal = enPer.reduce((s,d) => s+(d.kmTotal||0), 0);
+  const hh = Math.floor(horas), hm = Math.round((horas%1)*60);
+
+  // Pluses desglosados
+  const plusSuma = {};
+  enPer.forEach(d => (d.pluses||[]).forEach(p => {
+    plusSuma[p.tipo] = (plusSuma[p.tipo]||0) + p.valor;
+  }));
+
+  // Jornada
+  const diesJornada    = getDiesJornada(inicioPer, finPer);
+  const diesTreballats = enPer.length;
+  const pctJornada     = diesJornada ? Math.min(100, Math.round(diesTreballats/diesJornada*100)) : null;
+  const jornadaColor   = pctJornada >= 100 ? 'var(--green)' : pctJornada >= 70 ? 'var(--accent)' : 'var(--blue)';
+
+  // Económico
+  const antig = config.antiguedad ?? 0;
+  const bruto = TOTAL_FIJO + antig + extras;
+  const pctC  = config.pctComunes   ?? 4.83;
+  const pctA  = config.pctAccidente ?? 1.65;
+  const pctI  = config.pctIRPF      ?? 16.76;
+  const pol   = config.poliza       ?? 0.69;
+  const dComunes   = bruto * pctC / 100;
+  const dAccidente = bruto * pctA / 100;
+  const dIRPF      = bruto * pctI / 100;
+  const totalDed   = dComunes + dAccidente + dIRPF + pol;
+  const neto       = bruto - totalDed;
+
+  // ── KPIs fila superior
+  const kpisHtml = `
+    <div class="inf-grid3">
+      <div class="inf-kpi">
+        <div class="inf-kpi-lbl">Días trab.</div>
+        <div class="inf-kpi-val" style="color:var(--accent);">${diesTreballats}</div>
+      </div>
+      <div class="inf-kpi">
+        <div class="inf-kpi-lbl">Horas</div>
+        <div class="inf-kpi-val" style="color:var(--blue);font-size:13px;">${hh}h ${hm}m</div>
+      </div>
+      <div class="inf-kpi">
+        <div class="inf-kpi-lbl">Km totales</div>
+        <div class="inf-kpi-val" style="color:var(--purple);font-size:${kmTotal>9999?'12':'16'}px;">${kmTotal>0?kmTotal.toLocaleString('es-ES')+' km':'—'}</div>
+      </div>
+    </div>`;
+
+  // ── Barra jornada
+  const jornadaHtml = pctJornada !== null ? `
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:11px;padding:11px 13px;margin-bottom:12px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:7px;">
+        <div style="font-size:11px;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;">📅 Jornada del período</div>
+        <div style="font-size:12px;font-family:var(--mono);font-weight:700;color:${jornadaColor};">${diesTreballats}/${diesJornada} días · ${pctJornada}%</div>
+      </div>
+      <div style="background:var(--surface3);border-radius:99px;height:8px;overflow:hidden;">
+        <div style="width:${pctJornada}%;height:100%;background:${jornadaColor};border-radius:99px;"></div>
+      </div>
+      ${pctJornada>=100 ? '<div style="font-size:10px;color:var(--green);margin-top:5px;text-align:center;font-weight:700;">✅ Jornada completada</div>' : `<div style="font-size:10px;color:var(--muted);margin-top:5px;">Faltan ${diesJornada-diesTreballats} días</div>`}
+    </div>` : '';
+
+  // ── Desglose pluses
+  const plusEntries = Object.entries(plusSuma).sort((a,b)=>b[1]-a[1]);
+  const plusDesgHtml = plusEntries.length === 0
+    ? `<div style="color:var(--muted);font-size:12px;padding:8px 0;">Sin pluses en este período</div>`
+    : plusEntries.map(([tipo, val]) => `
+        <div class="inf-plus-row">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:10px;height:10px;border-radius:3px;background:${plusColors[tipo]||'var(--surface3)'};border:1px solid ${plusBorders[tipo]||'var(--border)'};"></div>
+            <span style="font-size:12px;color:var(--text2);">${plusNombres[tipo]||tipo}</span>
+          </div>
+          <span style="font-size:13px;font-family:var(--mono);font-weight:700;color:${plusTextC[tipo]||'var(--accent)'};">+${val.toFixed(2)}€</span>
+        </div>`).join('');
+
+  // ── Resumen económico
+  const econHtml = `
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Salario base</span><span style="font-size:12px;font-family:var(--mono);color:var(--green);">+${SUELDO_BASE.toFixed(2)}€</span></div>
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Paga prop. beneficios</span><span style="font-size:12px;font-family:var(--mono);color:var(--green);">+${PAGA_BENEFICIOS.toFixed(2)}€</span></div>
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Bolsa vacaciones</span><span style="font-size:12px;font-family:var(--mono);color:var(--green);">+${BOLSA_VACACIONES.toFixed(2)}€</span></div>
+      ${antig > 0 ? `<div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">🏅 Antigüedad</span><span style="font-size:12px;font-family:var(--mono);color:var(--green);">+${antig.toFixed(2)}€</span></div>` : ''}
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Total pluses</span><span style="font-size:12px;font-family:var(--mono);color:var(--accent);">+${extras.toFixed(2)}€</span></div>
+      <div style="border-top:1.5px solid var(--border2);margin:8px 0;"></div>
+      <div class="inf-plus-row"><span style="font-size:13px;font-weight:700;color:var(--text);">Bruto estimado</span><span style="font-size:14px;font-family:var(--mono);font-weight:800;color:var(--text);">${bruto.toFixed(2)}€</span></div>
+    </div>
+    <div style="background:rgba(239,68,68,0.05);border:1px solid rgba(239,68,68,0.2);border-radius:12px;padding:12px 14px;margin-bottom:10px;">
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Cont. Comunes (${pctC}%)</span><span style="font-size:12px;font-family:var(--mono);color:var(--red);">-${dComunes.toFixed(2)}€</span></div>
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Accidente AT/EP (${pctA}%)</span><span style="font-size:12px;font-family:var(--mono);color:var(--red);">-${dAccidente.toFixed(2)}€</span></div>
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Retención IRPF (${pctI}%)</span><span style="font-size:12px;font-family:var(--mono);color:var(--red);">-${dIRPF.toFixed(2)}€</span></div>
+      <div class="inf-plus-row"><span style="font-size:12px;color:var(--muted2);">Póliza seguro</span><span style="font-size:12px;font-family:var(--mono);color:var(--red);">-${pol.toFixed(2)}€</span></div>
+    </div>
+    <div class="inf-neto-card">
+      <div style="font-size:10px;font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:5px;">🏦 Neto estimado a cobrar</div>
+      <div style="font-size:38px;font-weight:800;font-family:var(--mono);color:var(--blue);">${neto.toFixed(2)}€</div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px;">Período ${labelPer}</div>
+    </div>`;
+
+  // ── Lista de días
+  const diasHtml = enPer.length === 0
+    ? `<div style="text-align:center;color:var(--muted);padding:20px;font-size:13px;">No hay días registrados en este período</div>`
+    : enPer.map(d => {
+        const f   = new Date(d.fecha + 'T00:00:00');
+        const dow = DIAS_S[f.getDay()];
+        const dNum= f.getDate();
+        const mes2= MESES_C[f.getMonth()];
+        const hh2 = Math.floor(d.totalH||0);
+        const hm2 = Math.round(((d.totalH||0)%1)*60);
+        const horaIni = d.horaInici || '—';
+        const horaFi  = d.horaFi   || '—';
+
+        const metaItems = [];
+        if (d.numBus)   metaItems.push(`🚌 Bus ${d.numBus}`);
+        if (d.kmTotal>0) metaItems.push(`📍 ${d.kmTotal} km`);
+        if (d.nota && d.nota.trim()) metaItems.push(`🏭 ${d.nota.trim().substring(0,22)}`);
+
+        const plusChips = (d.pluses||[]).map(p =>
+          `<span class="inf-plus-chip" style="background:${plusColors[p.tipo]||'var(--surface3)'};border-color:${plusBorders[p.tipo]||'var(--border)'};color:${plusTextC[p.tipo]||'var(--muted2)'};">${plusNombres[p.tipo]||p.tipo} +${p.valor.toFixed(2)}€</span>`
+        ).join('');
+
+        return `<div class="inf-day">
+          <div class="inf-day-header">
+            <div class="inf-day-fecha">${dow} ${dNum} ${mes2} · ${horaIni}→${horaFi} · ${hh2}h${hm2>0?hm2+'m':''}</div>
+            <div class="inf-day-total">${(d.total||0)>0?'+':''}${(d.total||0).toFixed(2)}€</div>
+          </div>
+          ${metaItems.length>0 ? `<div class="inf-day-meta">${metaItems.map(m=>`<span class="inf-day-tag">${m}</span>`).join('')}</div>` : ''}
+          ${plusChips ? `<div class="inf-day-pluses">${plusChips}</div>` : ''}
+        </div>`;
+      }).join('');
+
+  document.getElementById('informeContent').innerHTML = `
+    <!-- CABECERA -->
+    <div class="inf-header">
+      <div class="inf-header-title">Control Jornada · Disbus 21</div>
+      <div class="inf-header-period">Período ${labelPer}</div>
+      <div class="inf-header-sub">Generado ${DIAS_S[hoy.getDay()]} ${hoy.getDate()} ${MESES_L[hoy.getMonth()]} ${anio}</div>
+    </div>
+
+    <!-- KPIs -->
+    ${kpisHtml}
+
+    <!-- BARRA JORNADA -->
+    ${jornadaHtml}
+
+    <!-- DESGLOSE PLUSES -->
+    <div class="inf-section-title">💰 Desglose de pluses</div>
+    <div style="background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:10px 14px;margin-bottom:4px;">
+      ${plusDesgHtml}
+    </div>
+
+    <!-- ECONÓMICO -->
+    <div class="inf-section-title">📊 Resumen económico</div>
+    ${econHtml}
+
+    <!-- DÍAS -->
+    <div class="inf-section-title">📋 Días del período (${enPer.length})</div>
+    ${diasHtml}
+
+    <div class="inf-capture-hint">📸 Haz una captura de pantalla para guardar este informe</div>
+  `;
+
+  document.getElementById('informeOverlay').classList.add('show');
+}
+
+function cerrarInforme(e) {
+  if (!e || e.target === document.getElementById('informeOverlay')) {
+    document.getElementById('informeOverlay').classList.remove('show');
+  }
+}
+
+// ===== RESUMEN+ ANUAL =====
+function abrirResumenPlus() {
+  const hoy = new Date();
+  const anio = hoy.getFullYear();
+  const mesesNombres = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const mesesLargos  = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+
+  // ── Filtrar todo el año actual (solo días no-descanso)
+  const diasAnio = dias.filter(d => {
+    const f = new Date(d.fecha + 'T00:00:00');
+    return f.getFullYear() === anio && d.tipo !== 'descanso';
+  });
+  const diasDescanso = dias.filter(d => {
+    const f = new Date(d.fecha + 'T00:00:00');
+    return f.getFullYear() === anio && d.tipo === 'descanso';
+  });
+  const diasVacances = dias.filter(d => {
+    const f = new Date(d.fecha + 'T00:00:00');
+    return f.getFullYear() === anio && d.tipo === 'vacances';
+  });
+
+  const totalDiasTrabajados = diasAnio.length;
+  const totalHoras = diasAnio.reduce((s,d) => s + (d.totalH||0), 0);
+  const totalIngresos = diasAnio.reduce((s,d) => s + (d.total||0), 0) + (TOTAL_FIJO * 12);
+  const promedioHoras = totalDiasTrabajados > 0 ? (totalHoras / totalDiasTrabajados) : 0;
+  const hhTotal = Math.floor(totalHoras);
+  const hmTotal = Math.round((totalHoras % 1) * 60);
+  const hhProm  = Math.floor(promedioHoras);
+  const hmProm  = Math.round((promedioHoras % 1) * 60);
+
+  // ── Km totales del año
+  const kmAnio = diasAnio.reduce((s,d) => s + (d.kmTotal||0), 0);
+
+  // ── Festivos y nocturnos
+  let festTotal = 0, noctTotal = 0, dstCount = 0, circCount = 0;
+  diasAnio.forEach(d => {
+    (d.pluses||[]).forEach(p => {
+      if (p.tipo === 'festivo')  festTotal++;
+      if (p.tipo === 'nocturno') noctTotal++;
+      if (p.tipo === 'dst')      dstCount++;
+      if (p.tipo === 'circuito') circCount++;
+    });
+  });
+
+  // ── Ingresos por mes (solo pluses, sin fijos para el gráfico)
+  const ingresosMes = Array(12).fill(0);
+  const horasMes    = Array(12).fill(0);
+  const diasMes     = Array(12).fill(0);
+  diasAnio.forEach(d => {
+    const f = new Date(d.fecha + 'T00:00:00');
+    const m = f.getMonth();
+    ingresosMes[m] += (d.total||0);
+    horasMes[m]    += (d.totalH||0);
+    diasMes[m]++;
+  });
+
+  // ── Pluses ranking
+  const plusRanking = {};
+  const plusNombres = { horas:'Plus horas', dieta:'Dietas', limpieza:'Limpieza/Planif.', nocturno:'Nocturno', festivo:'Festivos', circuito:'Circuitos', dst:'DST', equipo:'En equipo' };
+  diasAnio.forEach(d => {
+    (d.pluses||[]).forEach(p => {
+      if (!plusRanking[p.tipo]) plusRanking[p.tipo] = 0;
+      plusRanking[p.tipo] += p.valor;
+    });
+  });
+  const plusOrdenados = Object.entries(plusRanking).sort((a,b) => b[1]-a[1]);
+
+  // ── Empresas más frecuentes (por nota del día)
+  const empresaCount = {};
+  diasAnio.forEach(d => {
+    if (d.nota && d.nota.trim()) {
+      const emp = d.nota.trim().toUpperCase().substring(0,20);
+      empresaCount[emp] = (empresaCount[emp]||0) + 1;
+    }
+  });
+  const empresasTop = Object.entries(empresaCount).sort((a,b)=>b[1]-a[1]).slice(0,6);
+
+  // ── Días libres vs trabajados (aproximación: días naturales del año hasta hoy)
+  const diasNaturalesHastaHoy = Math.floor((hoy - new Date(anio,0,1)) / 86400000) + 1;
+  const diasLibres = diasNaturalesHastaHoy - totalDiasTrabajados - diasDescanso.length - diasVacances.length;
+
+  // ── Máx para gráfico ingresos
+  const maxIngMes = Math.max(...ingresosMes, 1);
+  const maxHorMes = Math.max(...horasMes, 1);
+  const maxPlus   = plusOrdenados.length > 0 ? plusOrdenados[0][1] : 1;
+
+  // ── HTML
+  const mesActual = hoy.getMonth();
+
+  // Gráfico barras ingresos por mes
+  const barsIngHtml = mesesNombres.map((m,i) => {
+    const pct = Math.round((ingresosMes[i] / maxIngMes) * 100);
+    const isNow = i === mesActual;
+    const color = isNow ? 'var(--accent)' : i < mesActual ? 'var(--blue)' : 'var(--border2)';
+    return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
+      <div style="width:100%;background:var(--surface3);border-radius:4px 4px 0 0;height:50px;display:flex;align-items:flex-end;overflow:hidden;">
+        <div style="width:100%;height:${pct}%;background:${color};border-radius:3px 3px 0 0;min-height:${ingresosMes[i]>0?3:0}px;"></div>
+      </div>
+      ${ingresosMes[i]>0 ? `<div style="font-size:8px;font-family:var(--mono);color:${isNow?'var(--accent)':'var(--muted)'};font-weight:${isNow?'700':'400'};">${ingresosMes[i].toFixed(0)}€</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Gráfico barras horas por mes
+  const barsHorHtml = mesesNombres.map((m,i) => {
+    const pct = Math.round((horasMes[i] / maxHorMes) * 100);
+    const isNow = i === mesActual;
+    const color = isNow ? 'var(--green)' : i < mesActual ? 'rgba(16,185,129,0.5)' : 'var(--border2)';
+    const hh2 = Math.floor(horasMes[i]);
+    const hm2 = Math.round((horasMes[i]%1)*60);
+    return `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;">
+      <div style="width:100%;background:var(--surface3);border-radius:4px 4px 0 0;height:50px;display:flex;align-items:flex-end;overflow:hidden;">
+        <div style="width:100%;height:${pct}%;background:${color};border-radius:3px 3px 0 0;min-height:${horasMes[i]>0?3:0}px;"></div>
+      </div>
+      ${horasMes[i]>0 ? `<div style="font-size:8px;font-family:var(--mono);color:${isNow?'var(--green)':'var(--muted)'};font-weight:${isNow?'700':'400'};">${hh2}h${hm2>0?hm2+'m':''}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  // Labels meses
+  const labelsHtml = mesesNombres.map((m,i) => {
+    const isNow = i === mesActual;
+    return `<div style="flex:1;font-size:8.5px;font-family:var(--mono);color:${isNow?'var(--accent)':'var(--muted)'};font-weight:${isNow?'700':'400'};text-align:center;">${m}</div>`;
+  }).join('');
+
+  // Ranking pluses
+  const plusHtml = plusOrdenados.length === 0
+    ? `<div style="text-align:center;color:var(--muted);font-size:12px;padding:10px;">Sin pluses registrados este año</div>`
+    : plusOrdenados.map(([tipo, val], i) => {
+        const pct = Math.round((val/maxPlus)*100);
+        const colors = ['var(--accent)','var(--blue)','var(--green)','var(--purple)','var(--red)'];
+        const color  = colors[i % colors.length];
+        const nombre = plusNombres[tipo] || tipo;
+        return `<div class="rp-bar-row">
+          <div class="rp-bar-label">${nombre}</div>
+          <div class="rp-bar-bg"><div class="rp-bar-fill" style="width:${pct}%;background:${color};"></div></div>
+          <div class="rp-bar-val" style="color:${color};">${val.toFixed(2)}€</div>
+        </div>`;
+      }).join('');
+
+  // Empresas top
+  const empHtml = empresasTop.length === 0
+    ? `<div style="text-align:center;color:var(--muted);font-size:12px;padding:10px;">Añade notas en los días para ver las empresas</div>`
+    : empresasTop.map(([emp, cnt]) =>
+        `<div class="rp-emp-row">
+          <div class="rp-emp-name">${emp}</div>
+          <div class="rp-emp-days">${cnt} día${cnt!==1?'s':''}</div>
+        </div>`
+      ).join('');
+
+  // Total año estimado
+  const totalAnioEst = (TOTAL_FIJO * 12) + diasAnio.reduce((s,d)=>s+(d.total||0),0);
+
+  document.getElementById('resumenPlusContent').innerHTML = `
+
+    <!-- TOTALES ANUALES -->
+    <div class="rp-section">
+      <div class="rp-title">📆 Resumen del año ${anio}</div>
+      <div class="rp-stat-grid">
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">Días trabajados</div>
+          <div class="rp-stat-val" style="color:var(--accent);">${totalDiasTrabajados}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">Horas totales</div>
+          <div class="rp-stat-val" style="color:var(--blue);font-size:17px;">${hhTotal}h ${hmTotal}m</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">Media horas/día</div>
+          <div class="rp-stat-val" style="color:var(--green);font-size:17px;">${hhProm}h ${hmProm}m</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">Km acumulados</div>
+          <div class="rp-stat-val" style="color:var(--purple);font-size:${kmAnio>9999?'15':'20'}px;">${kmAnio > 0 ? kmAnio.toLocaleString('es-ES') + ' km' : '—'}</div>
+        </div>
+      </div>
+
+      <!-- Total año -->
+      <div class="rp-total-card">
+        <div style="font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">💰 Ingresos brutos estimados ${anio}</div>
+        <div style="font-size:30px;font-weight:800;font-family:var(--mono);color:var(--blue);">${totalAnioEst.toFixed(2)}€</div>
+        <div style="font-size:10px;color:var(--muted);margin-top:4px;">Fijos anuales ${(TOTAL_FIJO*12).toFixed(2)}€ + Pluses ${diasAnio.reduce((s,d)=>s+(d.total||0),0).toFixed(2)}€</div>
+      </div>
+    </div>
+
+    <!-- DÍAS: LIBRE VS TRABAJADO -->
+    <div class="rp-section">
+      <div class="rp-title">📊 Distribución de días (hasta hoy)</div>
+      <div class="rp-stat-grid">
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🟡 Trabajados</div>
+          <div class="rp-stat-val" style="color:var(--accent);">${totalDiasTrabajados}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🔵 Descanso</div>
+          <div class="rp-stat-val" style="color:var(--blue);">${diasDescanso.length}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🟣 Vacaciones</div>
+          <div class="rp-stat-val" style="color:var(--purple);">${diasVacances.length}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">⚪ Sin registrar</div>
+          <div class="rp-stat-val" style="color:var(--muted);">${Math.max(0,diasLibres)}</div>
+        </div>
+      </div>
+      <!-- Mini barra proporción -->
+      ${(()=>{
+        const total = totalDiasTrabajados + diasDescanso.length + diasVacances.length + Math.max(0,diasLibres);
+        if (total === 0) return '';
+        const pT  = (totalDiasTrabajados / total * 100).toFixed(1);
+        const pD  = (diasDescanso.length  / total * 100).toFixed(1);
+        const pV  = (diasVacances.length  / total * 100).toFixed(1);
+        const pL  = (Math.max(0,diasLibres) / total * 100).toFixed(1);
+        return `<div style="display:flex;height:10px;border-radius:99px;overflow:hidden;gap:2px;margin-top:4px;">
+          <div style="width:${pT}%;background:var(--accent);border-radius:99px;"></div>
+          <div style="width:${pD}%;background:var(--blue);border-radius:99px;"></div>
+          <div style="width:${pV}%;background:var(--purple);border-radius:99px;"></div>
+          <div style="width:${pL}%;background:var(--surface3);border-radius:99px;"></div>
+        </div>`;
+      })()}
+    </div>
+
+    <!-- FESTIVOS / NOCTURNOS -->
+    <div class="rp-section">
+      <div class="rp-title">🌙 Tipos especiales este año</div>
+      <div class="rp-stat-grid">
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🎉 Festivos</div>
+          <div class="rp-stat-val" style="color:var(--accent);">${festTotal}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🌙 Nocturnos</div>
+          <div class="rp-stat-val" style="color:var(--blue);">${noctTotal}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">🔄 DST</div>
+          <div class="rp-stat-val" style="color:var(--green);">${dstCount}</div>
+        </div>
+        <div class="rp-stat">
+          <div class="rp-stat-lbl">✈️ Circuitos</div>
+          <div class="rp-stat-val" style="color:var(--purple);">${circCount}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRÁFICO INGRESOS POR MES -->
+    <div class="rp-section">
+      <div class="rp-title">💵 Pluses por mes</div>
+      <div class="rp-chart-wrap">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:70px;">
+          ${barsIngHtml}
+        </div>
+        <div style="display:flex;margin-top:4px;gap:3px;">
+          ${labelsHtml}
+        </div>
+      </div>
+    </div>
+
+    <!-- GRÁFICO HORAS POR MES -->
+    <div class="rp-section">
+      <div class="rp-title">⏱️ Horas por mes</div>
+      <div class="rp-chart-wrap">
+        <div style="display:flex;align-items:flex-end;gap:3px;height:70px;">
+          ${barsHorHtml}
+        </div>
+        <div style="display:flex;margin-top:4px;gap:3px;">
+          ${labelsHtml}
+        </div>
+      </div>
+    </div>
+
+    <!-- RANKING PLUSES -->
+    <div class="rp-section">
+      <div class="rp-title">🏆 Ranking de pluses (año)</div>
+      ${plusHtml}
+    </div>
+
+    <!-- EMPRESAS TOP -->
+    <div class="rp-section">
+      <div class="rp-title">🏭 Empresas más frecuentes</div>
+      ${empHtml}
+      ${empresasTop.length > 0 ? '' : ''}
+      <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center;">Basado en las notas de los días registrados</div>
+    </div>
+
+  `;
+
+  document.getElementById('resumenPlusOverlay').classList.add('show');
+}
+
+function cerrarResumenPlus(e) {
+  if (!e || e.target === document.getElementById('resumenPlusOverlay')) {
+    document.getElementById('resumenPlusOverlay').classList.remove('show');
+  }
+}
+
+// ===== EXPORTAR / IMPORTAR DATOS =====
+function exportarDatos() {
+  const payload = {
+    version: 2,
+    exportado: new Date().toISOString(),
+    dias: dias,
+    config: config
+  };
+  const json = JSON.stringify(payload, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  const fecha = new Date().toISOString().slice(0,10);
+  a.href     = url;
+  a.download = `disbus21_backup_${fecha}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('✅ Datos exportados correctamente');
+}
+
+function importarDatos(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const data = JSON.parse(e.target.result);
+      // Soporte tanto backup nuevo (con wrapper) como array directo
+      const diasImport  = Array.isArray(data) ? data : (data.dias || []);
+      const configImport = data.config || null;
+      if (!Array.isArray(diasImport)) throw new Error('Formato no válido');
+      if (!confirm(`¿Importar ${diasImport.length} días registrados?\nEsto reemplazará los datos actuales.`)) {
+        event.target.value = '';
+        return;
+      }
+      dias = diasImport;
+      if (configImport) {
+        config = configImport;
+        localStorage.setItem('disbus_cfg', JSON.stringify(config));
+      }
+      guardarLS();
+      renderCal();
+      renderResumen();
+      renderVacancesCounter();
+      updateHeader();
+      showToast(`✅ ${diasImport.length} días importados`);
+    } catch(err) {
+      alert('❌ Error al leer el archivo. Asegúrate de que es un backup de Disbus 21.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
 
 function guardarLS(){localStorage.setItem('disbus_v2',JSON.stringify(dias));}
 
 function updateHeader(){
   const hoy=new Date();
   const t=dias.filter(d=>{const f=new Date(d.fecha);return f.getMonth()===hoy.getMonth()&&f.getFullYear()===hoy.getFullYear()&&d.tipo!=='descanso';}).reduce((s,d)=>s+(d.total||0),0);
-  document.getElementById('headerTotal').textContent=`+${(TOTAL_FIJO+t).toFixed(2)} €`;
+  const antig = config.antiguedad ?? 0;
+  document.getElementById('headerTotal').textContent=`+${(TOTAL_FIJO+antig+t).toFixed(2)} €`;
 }
 
 let toastT;
